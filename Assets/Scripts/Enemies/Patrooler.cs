@@ -15,10 +15,12 @@ public class Patrooler : Enemy
     private int missileCounter = 0;
     private GameObject player;
     static LayerMask enemyMask;
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         enemyMask = ~LayerMask.GetMask("Enemy");
         rb = gameObject.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -91,12 +93,13 @@ public class Patrooler : Enemy
         }
         else
             Instantiate(
-                missile, 
-                transform.position - new Vector3(-0.45f, 0.2f), 
+                missile,
+                transform.position - new Vector3(-0.45f, 0.2f),
                 Quaternion.FromToRotation(
                     Vector3.right,
                     player.transform.position - transform.position));
         missileCounter = 40;
+        audio.PlayOneShot(audio.clip);
     }
 
     private void OnDrawGizmos()

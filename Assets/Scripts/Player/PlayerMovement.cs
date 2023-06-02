@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
                     isJumping = false;
                     playerAnimator.Play("Landing");
                 }
-                horizontalDirection = Input.GetAxisRaw("Horizontal");
             }
+            horizontalDirection = Input.GetAxisRaw("Horizontal");
             playerAnimator.SetBool("Is Walking", horizontalDirection != 0);
             Flip();
             if (Input.GetButtonDown("Jump") && isOnGround())

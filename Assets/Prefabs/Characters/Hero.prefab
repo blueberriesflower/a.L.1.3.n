@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85a07e0d56fbcc44a587dea75b7bc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpingPower: 15
+  moveSpeed: 5
+  jumpingPower: 5
   groundSensor: {fileID: 5923097219889208992}
   shootingPoint: {fileID: 5923097219913287036}
   groundLayer:
@@ -207,6 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 10
   maxHealth: 10
+  playerAnimator: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!95 &4916545300808968035
 Animator:
   serializedVersion: 5
